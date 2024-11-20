@@ -28,3 +28,7 @@ production:
   adapter: postgresql
   encoding: unicode
   url: <%= ENV['DATABASE_URL'] %>
+queue:
+    <<: *primary_production
+    database: app_production_queue
+    migrations_paths: db/queue_migrate
